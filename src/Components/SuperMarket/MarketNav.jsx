@@ -1,5 +1,5 @@
 import React from 'react'
-import { CategoryMenu } from './CategoryMenu'
+import CategoryMenu from './CategoryMenu'
 
 const MarketNav = (props) => {
   return (
