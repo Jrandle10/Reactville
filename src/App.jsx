@@ -18,7 +18,6 @@ const App = () => {
     return true
   }
   
-  
   return (
     <>
       <main>

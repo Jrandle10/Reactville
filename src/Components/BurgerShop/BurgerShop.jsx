@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import '../../styles/burger.css'
 import IngredientList from "./IngredientList"
 import BurgerStack from "./BurgerStack"
@@ -7,16 +6,15 @@ import BurgerStack from "./BurgerStack"
 import { ingredients } from '../../data/burger-data'
 
 const BurgerShop = (props) => {
-  const [stack, setStack] = useState([])
+  const [ stack, setStack ] = useState([])
   console.log(ingredients)
 
-  function addToBurger(ingredient) {
-    setStack([...stack, ingredient])
-  }
+const addToBurger = (ingredient) => {
+  setStack([ingredient, ...stack])
+}
 
   function removeFromBurger (index) {
-    setStack(stack.filter((ing, idx) => idx !== index))
-
+    setStack(stack.filter((ele, i) => i !== index))
   }
   
   return (

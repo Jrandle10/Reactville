@@ -50,7 +50,6 @@ const SuperMarket = (props) => {
         removeFromCart={removeFromCart}
         handleExchange={props.handleExchange}
       />
-
     </div>
   )
 }

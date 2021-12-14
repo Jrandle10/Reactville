@@ -9,7 +9,7 @@ const Product = (props) => {
           <p id="product-name">{props.product.name}</p>
           <p id="product-price">${props.product.price}</p>
         </span>
-        <button>ADD TO CART</button>
+        <button onClick={() => props.addToCart(props.product)}>ADD TO CART</button>
       </section>
     </div>
   )
