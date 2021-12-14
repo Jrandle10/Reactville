@@ -10,22 +10,23 @@ const Cart = (props) => {
     return item.quantity > 1 ? sum + (item.price * item.quantity) : sum + item.price
   }, 0))
 
-  const clearCart = () => {
-    props.setCart([])
-    setMessage('')
-  }
-
   const handleCheckout = () => {
     const checkoutStatus = props.handleExchange(total)
     checkoutStatus ? clearCart() : setMessage('Payment declined!')
   }
 
+  const clearCart = () => {
+    props.setCart([])
+    setMessage('')
+  }
+
   return (
     <div className="cart">
       <h3>Cart</h3>
+      <p>{message}</p>
 
-      {props.cart?.map((item, idx) => (
-        <CartItem key={idx} item={item} removeFromCart={props.removeFromCart} />
+      {props.cart?.map((item, index) => (
+        <CartItem key={index} item={item} removeFromCart={props.removeFromCart} />
       ))}
 
       <div className="cart-total">

@@ -5,7 +5,7 @@ import '../../styles/super-market.css'
 import MarketNav from './MarketNav'
 import DisplayProducts from './DisplayProducts'
 import Cart from './Cart'
-import { products } from '../../data/market-data'
+import { products }  from '../../data/market-data'
 
 
 const SuperMarket = (props) => {
@@ -14,7 +14,6 @@ const SuperMarket = (props) => {
   const [productCategory, setProductCategory] = useState('Produce')
 
   const addToCart = (item) => {
-    console.log('addToCart works', item)
     if (cart.find(prod => prod.id === item.id)) {
       setCart(cart.map((prod) => prod.id === item.id ? { ...prod, quantity: prod.quantity + 1 } : prod))
     } else {
@@ -25,8 +24,7 @@ const SuperMarket = (props) => {
   const removeFromCart = (item) => {
     console.log('removeFromCart works', item)
     if (item.quantity > 1) {
-      setCart(cart.map((prod) => prod.id === item.id ? { ...item, quantity: item.quantity - 1 } : prod
-      ))
+      setCart(cart.map((prod) => prod.id === item.id ? { ...item, quantity: item.quantity - 1 } : prod))
     } else {
       setCart(cart.filter((prod) => prod.id !== item.id))
     }

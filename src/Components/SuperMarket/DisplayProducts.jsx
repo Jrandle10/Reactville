@@ -2,10 +2,10 @@ import React from 'react'
 import Product from './Product'
 
 const DisplayProducts = (props) => {
-  const selectedProducts = props.products.map((product, idx) => {
+  const selectedProducts = props.products.map((product, index) => {
     return product.category === props.productCategory &&
       <Product
-        key={idx}
+        key={index}
         product={product}
       />
   })
